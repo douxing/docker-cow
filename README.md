@@ -29,8 +29,10 @@ rc file:
     docker run -d --restart=always -p 7777:7777 --name cow-client -v $HOME/.cow:/root/.cow -w /root/.cow douxing/cow	
 ```
 
-**tip**: -w is optional and used for userPasswdFile,
+**tip**: -w is optional and used for files like userPasswdFile,
 COW use [os.Open](https://github.com/cyfdecyf/cow/blob/41c0fb157c8b939b724ae0d58dad3a1b7cd2e811/auth.go#L139) inside.
-If not set, cow will compain of not being able to find userPasswdFile.
+If not set, /root/.cow is used.
+
+**best practice** Just put every thing inside ```$HOME/.cow``` will be okay.
 
 Check the [COW proxy wiki](https://github.com/cyfdecyf/cow/wiki/Running-cow-with-docker-with-C-S) for more tips.

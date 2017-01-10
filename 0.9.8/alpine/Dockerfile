@@ -21,4 +21,6 @@ RUN set -ex \
   && unset GOPATH \
   && rm -rf /root/go
 
+WORKDIR /root/.cow
+
 CMD [ "cow" ]
